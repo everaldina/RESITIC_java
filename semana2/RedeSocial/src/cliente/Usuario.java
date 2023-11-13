@@ -29,45 +29,27 @@ public class Usuario {
     }
 
     public static void main(String[] args) {
-        Usuario usuario = new Usuario();
+        ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
         Scanner scanner = new Scanner(System.in);
-        String postagem;
+        String postagem, nome, email, nacionalidade;
+        char sn;
+
+        do{
+            System.out.print("Digite o nome do usuário: ");
+            nome = scanner.nextLine();
+            System.out.print("Digite o email do usuário: ");
+            email = scanner.nextLine();
+            System.out.print("Digite a nacionalidade do usuário: ");
+            nacionalidade = scanner.nextLine();
+
+            Usuario usuario = new Usuario(nome, email, nacionalidade);
+            listaUsuarios.add(usuario);
+
+            System.out.print("\nDeseja inserir mais usuarios (s/n)? ");
+            sn = scanner.nextLine().charAt(0);
+            System.out.print("\n");
+        }while(sn != 'n' && sn != 'N');
         
-        // lendo dados do usuario
-        System.out.print("Digite o nome do usuario: ");
-        usuario.setNome(scanner.nextLine());
-        System.out.print("Digite o email do usuario: ");
-        usuario.setEmail(scanner.nextLine());
-        System.out.print("Digite a nacionalidade do usuario: ");
-        usuario.setNacionalidade(scanner.nextLine());
-        System.out.println("Usuario cadastrado com sucesso!");
-
-
-        // imprimindo dados do usuario
-        System.out.println("\nNome: " + usuario.getNome());
-        System.out.println("Email: " + usuario.getEmail());
-        System.out.println("Nacionalidade: " + usuario.getNacionalidade());
-        System.out.println("Quantidade de postagens: " + usuario.getQuantidadePostagens());
-        System.out.println("Pontuacao: " + usuario.getPontuacao());
-
-
-        // adicionando postagem
-        System.out.print("\nDigite a postagem: ");
-        postagem = scanner.nextLine();
-        usuario.adicionaPostagem(postagem);
-        System.out.println("Postagem adicionada com sucesso!");
-
-
-        // alterando pontuacao
-        System.out.print("\nDigite adicao a pontuacao: ");
-        usuario.alteraPontuacao(scanner.nextInt());
-
-        // imprime novos dados
-        System.out.println("\nNome: " + usuario.getNome());
-        System.out.println("Email: " + usuario.getEmail());
-        System.out.println("Nacionalidade: " + usuario.getNacionalidade());
-        System.out.println("Quantidade de postagens: " + usuario.getQuantidadePostagens());
-        System.out.println("Pontuacao: " + usuario.getPontuacao());
 
 
 
