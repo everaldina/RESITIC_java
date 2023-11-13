@@ -50,7 +50,14 @@ public class Usuario {
             System.out.print("\n");
         }while(sn != 'n' && sn != 'N');
         
-
+        for (int i=0; i<listaUsuarios.size(); i++) {
+            System.out.println("Nome: " + listaUsuarios.get(i).getNome());
+            System.out.println("Email: " + listaUsuarios.get(i).getEmail());
+            System.out.println("Nacionalidade: " + listaUsuarios.get(i).getNacionalidade());
+            System.out.println("Quantidade de postagens: " + listaUsuarios.get(i).getQuantidadePostagens());
+            System.out.println("Pontuação: " + listaUsuarios.get(i).getPontuacao());
+            listaUsuarios.get(i).mostrarPostagens();
+        }
 
 
         scanner.close();
@@ -67,6 +74,13 @@ public class Usuario {
         this.pontuacao += delta;
         if(this.pontuacao < 0)
             this.pontuacao = 0;
+    }
+
+    // mostrar todas as postagens
+    public void mostrarPostagens(){
+        System.out.println("Postagens do usuário " + this.nome + ":");
+        for(int i = 0; i < this.postagens.size(); i++)
+            System.out.println("\t" + this.postagens.get(i));
     }
 
 
