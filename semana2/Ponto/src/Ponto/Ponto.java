@@ -10,6 +10,9 @@ public class Ponto {
     public Ponto() {
         this(0, 0);
     }
+    public Ponto(Ponto p) {
+        this(p.x, p.y);
+    }
 
     public float getX() {
         return x;
@@ -23,5 +26,9 @@ public class Ponto {
     }
     public void setY(float y) {
         this.y = y;
+    }
+
+    public float distanciaOrigen(){
+        return (float) Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
 }
