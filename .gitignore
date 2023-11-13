@@ -26,3 +26,8 @@ replay_pid*
 # vscode files
 .vscode/
 /.metadata/
+
+# arquivos eclipse
+.classpath
+.project
+.settings/
