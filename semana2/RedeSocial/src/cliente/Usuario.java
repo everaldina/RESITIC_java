@@ -68,7 +68,7 @@ public class Usuario {
         System.out.println("Nacionalidade: " + usuario.getNacionalidade());
         System.out.println("Quantidade de postagens: " + usuario.getQuantidadePostagens());
         System.out.println("Pontuacao: " + usuario.getPontuacao());
-        
+
 
 
         scanner.close();
@@ -83,6 +83,8 @@ public class Usuario {
     // altera pontuação com um valor adicional, que pode ser positivo ou negativo
     public void alteraPontuacao(int delta){
         this.pontuacao += delta;
+        if(this.pontuacao < 0)
+            this.pontuacao = 0;
     }
 
 
