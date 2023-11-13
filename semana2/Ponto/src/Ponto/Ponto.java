@@ -1,3 +1,5 @@
+package Ponto;
+
 public class Ponto {
     private float x, y;
 
@@ -22,5 +24,4 @@ public class Ponto {
     public void setY(float y) {
         this.y = y;
     }
-
 }
