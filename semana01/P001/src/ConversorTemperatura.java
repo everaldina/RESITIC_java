@@ -20,6 +20,7 @@ public class ConversorTemperatura {
         else
             System.out.println("\nTemperatura em Fahrenheit: " + celsiusToFahrenheit(temp));
 
+        sc.close();
     }
 
     // metodo para converter de celsius para fahrenheit

@@ -42,5 +42,7 @@ public class CalculadoraSimples {
                 System.out.println("Opção inválida!");
                 break;
         }
+
+        sc.close();
     }
 }
