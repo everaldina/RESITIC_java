@@ -34,7 +34,7 @@ public class Estudante {
     }
 
     // converter uma string no formato dd/MM/yyyy para um objeto Date
-    private static Date stringToDate(String data){
+    public static Date stringToDate(String data){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date dataNascimento = new Date();
 
