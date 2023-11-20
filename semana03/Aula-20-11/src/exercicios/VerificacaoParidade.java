@@ -13,6 +13,7 @@ public class VerificacaoParidade {
 
         System.out.println("O numero " + String.valueOf(n) + " é " + paridade(n).toLowerCase());
 
+        sc.close();
     }
 
     public static String paridade(int numero){
