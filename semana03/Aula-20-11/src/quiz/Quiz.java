@@ -20,7 +20,7 @@ public class Quiz {
         String[] alternativas = new String[4];
         int resposta;
 
-        System.out.print("Digite o enunciado da pergunta: ");
+        System.out.print("\nDigite o enunciado da pergunta: ");
         enunciado = sc.nextLine();
 
         for(int i=0;i<4;i++){
@@ -30,8 +30,10 @@ public class Quiz {
 
         
         do{
-            System.out.println("Digite a resposta correta: ");
+            System.out.print("Digite a resposta correta: ");
             resposta = sc.nextInt();
+            if (resposta < 1 || resposta > 4)
+                System.out.println("Opção inválida.");
         }while(resposta < 1 || resposta > 4);
 
         Pergunta p = new Pergunta(enunciado, alternativas, resposta);
@@ -49,7 +51,7 @@ public class Quiz {
         int opcao;
         boolean cont = true;
         do{
-            System.out.println("1 - Registrar pergunta");
+            System.out.println("\n1 - Registrar pergunta");
             System.out.println("0 -  Sair");
             System.out.print("Digite a opção desejada: ");
             opcao = sc.nextInt();
@@ -72,7 +74,7 @@ public class Quiz {
         boolean cont = true;
         int countCorretas = 0;
         for(int i=0;i<this.perguntas.size();i++){
-            System.out.println("Pergunta " + (i+1) + ": ");
+            System.out.println("\nPergunta " + (i+1) + ": ");
             this.perguntas.get(i).printQuestao();
             do{
                 System.out.println("\nDigite a resposta: ");
@@ -82,9 +84,9 @@ public class Quiz {
             }while(opcao < 1 || opcao > 4);
             if(verificarResposta(opcao, i)){
                 countCorretas++;
-                System.out.println("Resposta correta!\n");
+                System.out.println("Resposta correta!");
             }else
-                System.out.println("Resposta incorreta!\n");
+                System.out.println("Resposta incorreta!");
             
         }
 
